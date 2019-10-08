@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style type="text/css">
+        img {
+            width: 100px;
+        }
+
+        input:-webkit-autofill {
+            -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <ul>
+        <!-- <li><h2></h2><img src="" ></li> -->
+    </ul>
+    <input type="button" name="" id="btn" value="next" />
+
+    <script type="text/javascript">
+
+        function loadData(pageNum) {
+            let api = `http://jx.xuzhixiang.top/ap/api/allproductlist.php?pagesize=10&pagenum=${pageNum}`
+            let xhr = new XMLHttpRequest()
+            xhr.open('get', api)
+            xhr.send(null)
+            xhr.onload = function () {
+                if (xhr.status == 200) {
+                    let jsonStr = xhr.responseText
+                    let obj = JSON.parse(jsonStr)
+                    console.log(obj)
+                    let html = ''
+                    obj.data.forEach(product => {
+                        html += `
+                                <li>
+                                    <h2>${product.pname}</h2>
+                                    <img src="${product.pimg}" >
+                                    <a class="not-like" href="javascript:;">不喜欢X</a>
+                                </li>
+
+
+                                `
+                    })
+                    list.innerHTML += html;
+                    let dbtns = document.querySelectorAll('.not-like')
+                    console.log(dbtns)
+                    // for()
+
+
+                }
+            }
+
+        }
+        let pageNum = 1
+        loadData(pageNum)
+
+        let list = document.querySelector('ul')
+
+        let btn = document.querySelector('#btn')
+        btn.onclick = function () {
+            pageNum++
+            loadData(pageNum)
+        }
+
+        list.onclick = function (evt) {
+            if (evt.target.classList.contains('not-like')) {
+                evt.target.parentNode.remove()
+            }
+        }
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>

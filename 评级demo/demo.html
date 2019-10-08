@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>demo</title>
+</head>
+<script src="./jquery.min.js"></script>
+<script src="./jquery.raty.min.js"></script>
+
+<body>
+    <p>这他妈是input（text） <code>text</code> field.</p>
+    <div class="demo">
+        <div id="target-text-demo" class="target-demo"></div>
+        <input id="target-text-hint" type="text" class="hint" />
+    </div>
+    </div>
+    <p>这他妈是textarea <code>textarea</code>.</p>
+    <div class="demo">
+        <div id="target-textarea-demo" class="target-demo"></div>
+        <textarea id="target-textarea-hint" class="hint"></textarea>
+    </div>
+    <p>这他妈是下拉框 <code>select</code>.</p>
+    <div class="demo">
+        <div id="target-select-demo" class="target-demo"></div>
+        <select id="target-select-hint" class="hint">
+            <option value="">--</option>
+            <option value="bad">bad</option>
+            <option value="poor">poor</option>
+            <option value="regular">regular</option>
+            <option value="good">good</option>
+            <option value="gorgeous">gorgeous</option>
+        </select>
+    </div>
+</body>
+<script>
+    $(function () {
+        $.fn.raty.defaults.path = 'img';
+        $('#target-text-demo').raty({
+            // cancel: true,
+            half: true,
+            size: 24,
+            target: '#target-text-hint',
+            // path: 'img',
+            // cancel: true,
+            cancelOff: 'cancel-off-big.png',
+            cancelOn: 'cancel-on-big.png',
+            half: true,
+            size: 24,
+            starHalf: 'star-half-big.png',
+            starOff: 'star-off-big.png',
+            starOn: 'star-on-big.png'
+        });
+        $('#target-textarea-demo').raty({
+            cancel: true,
+            target: '#target-textarea-hint'
+        });
+        $('#target-select-demo').raty({
+            cancel: true,
+            target: '#target-select-hint'
+        });
+    })
+</script>
+
+</html>

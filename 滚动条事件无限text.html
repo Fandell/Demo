@@ -1,0 +1,34 @@
+<html>
+
+<head>
+    <script src="http://code.jquery.com/jquery-1.3.1.min.js"></script>
+</head>
+
+<body>
+    <div style="height:1000px;">
+    </div>
+</body>
+
+</html>
+<script>
+    $(document).ready(function () {
+        //body对象
+        var $body = $("body");
+        //body高度
+        var bh = $body.height();
+        //加载窗体滑动事件
+        $(window).scroll(function () {
+            //窗体高度
+            var wh = $(window).height();
+            //滚动条滚动长度
+            var sh = $(window).scrollTop();
+            if (wh + sh > bh) {
+                loaddata();
+            }
+        })
+    });
+    function loaddata() {
+        var html = "<div>test</div>";
+        $('body').append(html);
+    };
+</script>

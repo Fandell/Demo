@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style type="text/css">
+        img {
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <ul>
+        <!-- <li><h2></h2><img src="" ></li> -->
+    </ul>
+    <input type="button" name="" id="btn" value="next" />
+    <!-- <script src="lodash.js"></script> -->
+    <script type="text/javascript">
+
+        function loadData(pageNum) {
+            let api = `http://jx.xuzhixiang.top/ap/api/allproductlist.php?pagesize=10&pagenum=${pageNum}`
+            let xhr = new XMLHttpRequest()
+            xhr.open('get', api)
+            xhr.send(null)
+            xhr.onload = function () {
+                if (xhr.status == 200) {
+                    let jsonStr = xhr.responseText
+                    let obj = JSON.parse(jsonStr)
+                    console.log(obj)
+                    let html = ''
+                    obj.data.forEach(product => {
+                        html += `
+                                <li>
+                                    <h2>${product.pname}</h2>
+                                    <img src="${product.pimg}" >
+                                    <a class="not-like" href="javascript:;">不喜欢X</a>
+                                </li>
+ 
+ 
+                                `
+                    })
+                    list.innerHTML += html;
+                    let dbtns = document.querySelectorAll('.not-like')
+                    console.log(dbtns)
+                    // for()
+
+
+                }
+            }
+
+        }
+        let pageNum = 1
+        loadData(pageNum)
+
+        let list = document.querySelector('ul')
+
+        let btn = document.querySelector('#btn')
+        // btn.onclick = function () {
+        //     pageNum++
+        //     loadData(pageNum)
+        // }
+
+        // list.onclick = function (evt) {
+        //     if (evt.target.classList.contains('not-like')) {
+        //         evt.target.parentNode.remove()
+        //     }
+        // }
+
+        // 滚动条事件，获取页面滚动的高度与（BODY对象高度、可见区域高度）
+        window.onscroll = function () {
+            let st = document.scrollingElement.scrollTop;
+            // console.log(st)  
+
+
+            let top = document.body.clientHeight - document.documentElement.clientHeight - 100
+            console.log(st,top)
+            console.log(document.documentElement.clientHeight)
+            console.log(document.body.clientHeight-document.documentElement.clientHeight-100)
+            console.log(top)
+            if (st >= top) {
+                //发起请求
+                console.log(11)
+                //防抖动
+                // console.log(_)
+                // f()
+                deBounce(function () {
+                    pageNum++
+                    loadData(pageNum)
+                })
+
+
+            }
+
+        }
+
+        let f = _.debounce(function () {
+            console.log(111)
+            pageNum++
+            loadData(pageNum)
+        }, 100)
+
+        //控制 fn  短时间内只执行一次
+        function deBounce(fn) {
+
+            clearTimeout(deBounce.timer)
+            deBounce.timer = setTimeout(function () {
+
+                fn()
+            }, 100)
+        }
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>

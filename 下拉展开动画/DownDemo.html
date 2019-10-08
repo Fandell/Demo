@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none
+        }
+
+        @font-face {
+            font-family: "iconfont";
+            src: url('iconfont.eot?t=1569379511138');
+            /* IE9 */
+            src: url('iconfont.eot?t=1569379511138#iefix') format('embedded-opentype'),
+                /* IE6-IE8 */
+                url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAARcAAsAAAAACNgAAAQPAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDSAqERINsATYCJAMYCw4ABCAFhG0HXRunB8gOJSHBwAAAYABmPDy/9u3cN3fGV40kGjc0XCIRb+KhkJbQCI1IpWRC8VBo/+ff0z9ths7OkyY6a2+yrEiXZnA68L0/UsWD+MU/7p02bYPNZ99ymWOcf+qiOO68C2xPbINE8QJJ1HvAbqIWsJ/A4JCZBGeTMwtBJMGwQDynKQJEMaMsoYdO0+TMzYzPYKgrn4RXARy4349/4B8iiroCY28+TJJA7E/r11UY/5+HShsDov7s4BZR4TSQxMdc52uYnzwNMyidDVwGJp0i+/pE4OvE10Wvq/7PiEnBGyb8yyPVQlERDbJ8AlfpVM1PaxMh+RkozFMlkgjBzyKEws8qlVPXNj32mccXAP8ASIc9ZGiFkEsTBJbTNMYKZp59/4KcP7qRd0CSufymMSdqgZoY1RWr9SUL5i3aZK/ReCzTFun1Xit0xfO3OKkXOGi1oNGYCk5ufl2s15fEnrZI83Jqu0ZTqL1XpH9QotOVnteNX6NPOacdt1JTvPcmfyvowB2v5beDGbWA2qI+PjpVQm4ePcpPQ5vGOpCkxqZUVmQF8w9MBeO9Iqakfv9x9YmxY/xRwuvwet7qZQudbZ2HZ6N8mJQtjD/EsCv87lnxJ884M3Q0f8yicaPvjNx+C1UgmH8L3QKb4ECouTUXOGiRaxEsOtg4x2IsP9Q081/eigGbc3iG3TJswYWrC6wYduEatkhZyytdJ5gQ3CPcvE2oNmm4aZafVZBl60RPSV5qXM+BZ7kFnp75BSef5hVYWpoXif5GBOUE1dYGGYv2ayHoAARfh2x9J/iMG6gbFNv4BPoKdw47cbBdiT4G14IbN30IZS9uJ2/M29s8yOUdnKyf8TXfM+TWh0f4tcRrSY8SH+FgbQuwM7QCzE6Xb1i0exiPrcd4AKr/QjXA7FR5isX8D7/x8tJPaY1V5C+RWYIfO38dIIMz3gDauTvl3FXefqt0BiB5CZialEVm1WbYV6BxnzG3Tm/AOt65d9njvtRrtcsJnbUQitYeVDqHsUk8DbXRfqjRWWc5g1NSyMWjFSxMZI+TBggIi3ZAMe87VBZdwybxEdTWfYLGYmAwuB92a46OBm2awCKCQxK8rg2nxYyCNCycqVeZj6gmGcFGJS6jGLEqOoL7efsmMylIgdg+JqiaKX+OI3GSZeR4MnEYkskYXMkyDUjMeddznDLcx4fMu5O3mJGDqTNYCIGDSODqtMHRxBgKpN2YY5r6fD6E0kSGwJagKtzFEJYK3T7OjzffGtgUpaIW6lyOUWlG8cfhkHAkFkMOl0zYERkmGThlfq8GiBjHW32LuFI4H6oWWVfpPb5afpWbYADrNlGiiow6mmgN75imBppQcM5rxhJaQbUgGmulCbMsm5+IsgpbmsT1CAAA') format('woff2'),
+                url('iconfont.woff?t=1569379511138') format('woff'),
+                url('iconfont.ttf?t=1569379511138') format('truetype'),
+                /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+                url('iconfont.svg?t=1569379511138#iconfont') format('svg');
+            /* iOS 4.1- */
+        }
+
+        .iconfont {
+            font-family: "iconfont" !important;
+            font-size: 16px;
+            font-style: normal;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .icon-youjiantou:before {
+            content: "\e644";
+        }
+
+        .icon-dingwei:before {
+            content: "\e655";
+        }
+
+        .icon-xia:before {
+            content: "\e65d";
+        }
+
+        .icon-youjiantou1:before {
+            content: "\e610";
+        }
+
+        .icon-gouwuche:before {
+            content: "\e634";
+        }
+
+
+        .service-main {
+            float: right;
+            width: 977px;
+            min-height: 70px;
+            background-color: #fbfbfb;
+        }
+
+        .service-main .main-top {
+            background-color: #fff;
+        }
+
+        .service-main .main-top h5 {
+            cursor: pointer;
+            font-size: 20px;
+            color: #333333;
+            line-height: 70px;
+            font-weight: normal;
+            text-indent: 5%;
+            border-bottom: 1px solid #efedee;
+        }
+
+        .service-main .main-top h5 span {
+            font-size: 25px;
+            color: #333333;
+            float: right;
+            margin-right: 5%;
+        }
+
+        .service-main .main-top .green {
+            color: #83c209;
+        }
+
+        .service-main .main-top h5 .current {
+            color: #83c209;
+            transform: rotate(180deg);
+            transition: ease-out 0.5s;
+        }
+        .service-main .main-top h5 .currentBack{
+            color: #666666;
+            transform: rotate(360deg);
+            transition: ease-out 0.5s;
+        }
+        .service-main .flow {
+            display: none;
+            padding: 50px 0;
+            background-color: #fbfbfb;
+        }
+
+        .service-main .flow p {
+            text-indent: 50px;
+            font-size: 16px;
+            color: #666666;
+            line-height: 26px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="service-main">
+        <ul>
+            <li class="main-top">
+                <h5>短信购买时间？<span class="iconfont icon-xia"></span></h5>
+                <ul class="flow">
+                    <li>
+                        <p>本次活动结束后，官网会在产品界面显示下次购买时间。</p>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+<script src="jQuery-v1.12.0.js"></script>
+<script>
+    //下拉
+    $(function () {
+        $(".main-top > h5").click(function () {
+            // $(this).toggle(function () {
+            //     $(this).css("Color", "#83c209");
+            // }, function () {
+            //     $(this).css("Color", "#333333");
+            // });
+            $(this).next().toggle(500, function () {
+                //TODO  
+            });
+            if ($(this).children("span").is(".current")) {
+                $(this).children("span").removeClass('current')
+                $(this).children("span").addClass('currentBack')
+                $(this).removeClass("green");
+            } else {
+                $(this).children("span").addClass('current');
+                $(this).children("span").removeClass('currentBack')
+                $(this).addClass("green");
+            }
+        });
+    });
+</script>
+
+</html>
