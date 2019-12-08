@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+  </head>
+  <script src="validate/jQuery-v1.12.0.js"></script>
+  <script src="validate/additional_methods.js"></script>
+  <script src="validate/jquery.validate.js"></script>
+  <script src="validate/messages_zh.js"></script>
+  
+	<body>
+		<section id="progressSection" class="progressSection" style=" padding-top: 25px;">
+
+    <div class="layui-form-item">
+      <form action="" class="layui-form" id="progressForm0" name="progressForm0">
+
+        <label class="layui-form-label"><span class="text-warn">*</span> 策略名称:</label>
+        <div class="layui-input-inline">
+          <input type="text" name="name" id="name" maxlength="32" placeholder="建议填写进程对应程序的名称，例如office、word" class="layui-input">
+        </div>
+      </form>
+
+      <label class="layui-form-label">选择本地进程:</label>
+      <div class="layui-input-inline" style="width: 100px;">
+        <a type="button" class="layui-btn layui-btn-sm layui-btn-primary localProgressBtn">选择本地进程</a>
+        <input type="text" name="remark" id="remark" maxlength="1000" placeholder="" class="layui-input" style="display: none;">
+      </div>
+      <label class="layui-form-label text-comment2 pl0" style="width: auto;">（选择后，自动填充进程名称和摘要）</label>
+    </div>
+  <form action="" class="layui-form" id="progressForm" name="progressForm">
+    <div class="layui-form-item">
+      <label class="layui-form-label"><span class="text-warn">*</span> 进程名称:</label>
+      <div class="layui-input-inline">
+        <input type="text" name="address" id="address" maxlength="1000" placeholder="C:\XXXX\XXXXXX\setupexe" class="layui-input">
+      </div>
+
+      <label class="layui-form-label"><span class="text-warn">*</span> 进程包:</label>
+      <div class="layui-input-inline" style="width: 280px;">
+        <select name="pacId" id="pacId" lay-search>
+          <option value="">选择进程所属的进程包</option>
+        </select>
+      </div>
+      <a class="icon icon24 icon-add2 ml5" id="addSelfPack" style="vertical-align: middle;margin-top: 3px;"></a>
+    </div>
+    <div class="layui-form-item">
+      <label class="layui-form-label">策略类型:</label>
+      <div class="layui-input-inline">
+        <select name="sys" id="sys" lay-filter="sysFilter2">
+          <option value="">请选择</option>
+        </select>
+        <div class="label-warn label-sys warn-1" style="display: none">（系统策略，添加后自动发布所有用户）</div>
+      </div>
+      <label class="layui-form-label">加入黑名单:</label>
+      <div class="layui-input-inline">
+        <select name="black" id="black">
+          <option value="0" selected>否</option>
+          <option value="1">是</option>
+        </select>
+        <div class="label-warn">（禁止用户访问加入黑名单的进程）</div>
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <label class="layui-form-label">备注信息:</label>
+      <div class="layui-input-block" style="width: 760px;">
+        <textarea name="note" id="note" maxlength="128" class="layui-textarea"></textarea>
+      </div>
+    </div>
+  </form>
+
+    <div class="btn-item text-right clearfix pr15">
+      <button type="button" class="layui-btn layui-btn-normal layui-btn-sm" id="saveProgressBtn">保存</button>
+      <button type="button" class="layui-btn layui-btn-primary layui-btn-sm" onclick="hideDialog()">取消</button>
+    </div>
+</section>
+  </body>
+  
+</html>

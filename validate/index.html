@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link href="js/lib/layui/css/layui.css" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
+</head>
+<body>
+<section id="groupSection" style="width: 500px;height: 500px;margin: 100px auto;border: 1px solid #333;">
+  <form action="" class="layui-form" id="groupForm" name="groupForm" style="padding: 20px">
+    <div class="layui-form-item">
+      <label class="layui-form-label"><span class="text-warn">*</span> 分组名称:</label>
+      <div class="layui-input-block">
+        <input type="text" name="name" id="name" maxlength="32" placeholder="请输入分组名称" class="layui-input">
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <label class="layui-form-label">所属单位:</label>
+      <div class="layui-input-block" style="position: relative;">
+        <input type="text" name="tel" id="deptName" placeholder="请输入电话" class="layui-input">
+      </div>
+    </div>
+
+    <div class="layui-form-item">
+      <label class="layui-form-label">备注信息:</label>
+      <div class="layui-input-block">
+        <textarea name="note" id="note" maxlength="128" class="layui-textarea"></textarea>
+      </div>
+    </div>
+    <!-- <div class="btn-item text-right clearfix pr15">
+      <button class="layui-btn layui-btn-normal layui-btn-sm" id="btn">确定</button>
+      <button type="button" class="layui-btn layui-btn-primary layui-btn-sm" onclick="hideDialog()">取消</button>
+    </div> -->
+  </form>
+</section>
+
+
+</body>
+<script src="js/lib/jquery.min.js"></script>
+<script src="js/lib/layui/layui.js"></script>
+<script src="js/lib/validate/jquery.validate.js"></script>
+<script src="js/lib/validate/messages_zh.js"></script>
+<script src="js/lib/validate/additional_methods.js"></script>
+<script src="js/controller/index.js"></script>
+</html>

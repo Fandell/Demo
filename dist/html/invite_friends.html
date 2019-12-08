@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <meta name="theme-color" content="#3d3c53">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=0">
+    <title>邀请好友</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/invite_friends.css">
+
+    <script>
+        /**
+         * YDUI 可伸缩布局方案
+         * rem计算方式：设计图尺寸px / 100 = 实际rem  【例: 100px = 1rem，32px = .32rem】
+         */
+        ! function (window) {
+
+            /* 设计图文档宽度 */
+            var docWidth = 750;
+
+            var doc = window.document,
+                docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+
+            var recalc = (function refreshRem() {
+                var clientWidth = docEl.getBoundingClientRect().width;
+
+                /* 8.55：小于320px不再缩小，11.2：大于420px不再放大 */
+                docEl.style.fontSize = Math.max(Math.min(20 * (clientWidth / docWidth), 11.2), 8.55) * 5 + 'px';
+
+                return refreshRem;
+            })();
+
+            /* 添加倍屏标识，安卓为1 */
+            docEl.setAttribute('data-dpr', window.navigator.appVersion.match(/iphone/gi) ? window.devicePixelRatio : 1);
+
+            if (/iP(hone|od|ad)/.test(window.navigator.userAgent)) {
+                /* 添加IOS标识 */
+                doc.documentElement.classList.add('ios');
+                /* IOS8以上给html添加hairline样式，以便特殊处理 */
+                if (parseInt(window.navigator.appVersion.match(/OS (\d+)_(\d+)_?(\d+)?/)[1], 10) >= 8)
+                    doc.documentElement.classList.add('hairline');
+            }
+
+            if (!doc.addEventListener) return;
+            window.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+
+        }(window);
+    </script>
+</head>
+
+<body>
+    <div class="invite-wrapper">
+        <div class="invite-bg">
+            <div class="share-btn">立即给好友分享</div>
+            <div class="activity-rules-title">
+                <span class="title-tips">活动规则</span>
+            </div>
+            <div class="rule-detail">
+                    1.这里是规则这里是规则这里是规则这里是规则这里是规则这里是规则这里是规则这里是规则这里是规则这里是规则这里是规则这里是规则这里是规则
+                    2.这里是规则这里是规则这里是规则这里是规则这里是规则这里是规则这里是规则这里是规则这里是规则这里是规则这里是规则这里是规则这里是规则
+                    3.这里是规则这里是规则这里是规则这里是规则这里是规则这里是规则这里是规则这里是规则这里是规则这里是规则这里是规则这里是规则这里是规则
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

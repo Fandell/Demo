@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <meta name="theme-color" content="#3d3c53">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=0">
+    <title>会员注册</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/register.css">
+
+    <script>
+        /**
+         * YDUI 可伸缩布局方案
+         * rem计算方式：设计图尺寸px / 100 = 实际rem  【例: 100px = 1rem，32px = .32rem】
+         */
+        ! function (window) {
+
+            /* 设计图文档宽度 */
+            var docWidth = 750;
+
+            var doc = window.document,
+                docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+
+            var recalc = (function refreshRem() {
+                var clientWidth = docEl.getBoundingClientRect().width;
+
+                /* 8.55：小于320px不再缩小，11.2：大于420px不再放大 */
+                docEl.style.fontSize = Math.max(Math.min(20 * (clientWidth / docWidth), 11.2), 8.55) * 5 + 'px';
+
+                return refreshRem;
+            })();
+
+            /* 添加倍屏标识，安卓为1 */
+            docEl.setAttribute('data-dpr', window.navigator.appVersion.match(/iphone/gi) ? window.devicePixelRatio : 1);
+
+            if (/iP(hone|od|ad)/.test(window.navigator.userAgent)) {
+                /* 添加IOS标识 */
+                doc.documentElement.classList.add('ios');
+                /* IOS8以上给html添加hairline样式，以便特殊处理 */
+                if (parseInt(window.navigator.appVersion.match(/OS (\d+)_(\d+)_?(\d+)?/)[1], 10) >= 8)
+                    doc.documentElement.classList.add('hairline');
+            }
+
+            if (!doc.addEventListener) return;
+            window.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+
+        }(window);
+    </script>
+</head>
+
+<body>
+    <div class="register-wrapper">
+        <div class="register-bg">
+            <div class="register-info">
+                <div class="user">
+                    <div class="portrait-container">
+                        <img src="../images/active.png" class="head-portrait">
+                    </div>
+                    <span class="username">这里是用户名</span>
+                    <span class="tips">邀请你注册领好礼啦!</span>
+                </div>
+                <div class="phone-info">
+                    <input type="telephone" placeholder="请输入手机号" class="phone">
+                    <div class="idycode">
+                        <input class="input-code" placeholder="请输入验证码" type="text" placeholder="请输入验证码">
+                        <button class="get-code">获取验证码</button>
+                    </div>
+                    <div class="register-btn">立即注册</div>
+                </div>
+            </div>
+            <div class="activity-rules-title">
+                <span class="title-tips">活动规则</span>
+            </div>
+            <div class="rule-detail">
+                1.这里是规则这里是规则这里是规则这里是规则这里是规则这里是规则这里是规则这里是规则这里是规则这里是规则这里是规则这里是规则这里是规则
+                2.这里是规则这里是规则这里是规则这里是规则这里是规则这里是规则这里是规则这里是规则这里是规则这里是规则这里是规则这里是规则这里是规则
+                3.这里是规则这里是规则这里是规则这里是规则这里是规则这里是规则这里是规则这里是规则这里是规则这里是规则这里是规则这里是规则这里是规则
+            </div>
+        </div>
+        <div class="cover">
+            <div class="cover-container">
+                
+                <div class="rgs-general">
+                    <div class="rgs-general-container">
+                        <div class="rgs-title">
+                            <img class="close" src="../images/rgs_success/close.png" alt="">
+                            <span>恭喜您获得以下赠礼</span>
+                        </div>
+                        <div class="rgs-content">
+                            <span class="coupon">
+                                肯德基优惠券一张
+                            </span>
+                            <span class="coupon">
+                                肯德基优惠券一张
+                            </span>
+                            <span class="coupon">
+                                肯德基优惠券一张
+                            </span>
+                        </div>
+                        <div class="rgs-footer">
+                            <span>通过个人中心查看赠礼详情</span>
+                            <button class="personal-center">进入个人中心</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="rgs-gift">
+                    <div class="rgs-gift-container">
+                        <div class="rgs-info">
+                            <div class="close-div">
+                                <img class="close" src="../images/rgs_success/close_bg.png" alt="">
+                            </div>
+                            <div class="rgs-header">
+                                <span class="tips">-----------  恭喜你获得以下赠礼  ----------</span>
+                            </div>
+                            <div class="rgs-content">
+                                <div class="coupon">
+                                    <span>流氓兔公仔一个</span>
+                                    <img src="../images/rgs_success/reg_logo1.png" alt="">
+                                </div>
+                                <div class="coupon">
+                                    <span>流氓兔公仔一个</span>
+                                    <img src="../images/rgs_success/reg_logo2.png" alt="">
+                                </div>
+                                <div class="coupon">
+                                    <span>流氓兔公仔一个</span>
+                                    <img src="../images/rgs_success/reg_logo3.png" alt="">
+                                </div>
+                                <div class="coupon">
+                                    <span>流氓兔公仔一个</span>
+                                    <img src="../images/rgs_success/reg_logo3.png" alt="">
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="rgs-footer">
+                            <button class="invite-more">邀请好友, 获得更多礼品</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="rgs-nogift">
+                    <div class="rgs-nogift-container">
+                        <div class="close-div">
+                            <img class="close" src="../images/rgs_success/close_w.png" alt="">
+                        </div>
+                        <div class="regs-info">
+                            <h2>注册成功</h2>
+                            <p>恭喜您，您已经具有尊贵的会员身份，可享
+                                受平台提供的诸多会员权益！
+                            </p>
+                            <img src="../images/rgs_success/vip_log.png" alt="">
+                            <button class="invite-more">邀请好友, 获得更多礼品</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../js/lib/jquery-1.8.3.min.js"></script>
+<script>
+    $(function () {
+        //获取短信验证码
+        var validCode = true;
+        $(".get-code").click(function () {
+            var time = 60;
+            var $code = $(this);
+            if (validCode) {
+                validCode = false;
+                $(this).attr("disabled", true);
+                var t = setInterval(function () {
+                    time--;
+                    $code.html(time + "秒");
+                    if (time == 0) {
+                        clearInterval(t);
+                        $code.html("重新获取");
+                        $(this).removeAttr("disabled");
+                        validCode = true;
+                    }
+                }, 1000)
+            }
+        })
+        
+        // 注册成功
+        $('.register-btn').click(function () {
+            $('.cover').fadeIn(500);
+            $('.rgs-general').fadeIn(500); // 普通注册
+            // $('.rgs-gift').show(); // 有赠礼
+            // $('.rgs-nogift').show(); // 无赠礼
+            // setTimeout(function () { $('.rgs-general').hide();$('.rgs-gift').fadeIn(500);  }, 2000);
+            // setTimeout(function () { $('.rgs-gift').hide();$('.rgs-nogift').fadeIn(500);  }, 4000);
+        })
+
+        // 点击叉叉关闭注册遮罩
+        $('.close').click(function () {
+            $('.cover').fadeOut(500);
+            $('.rgs-general').fadeOut(500);
+            $('.rgs-gift').fadeOut(500);
+            $('.rgs-nogift').fadeOut(500);
+        })
+
+        // 进去个人中心
+        $('.personal-center').click(function () {
+            $('.cover').fadeOut(500);
+            $('.rgs-general').fadeOut(500);
+        })
+
+        // 邀请好友,获得更多礼品
+        $('.invite-more').click(function () {
+            $('.cover').fadeOut(500);
+            $('.rgs-gift').fadeOut(500);
+            $('.rgs-nogift').fadeOut(500);
+        })
+    })
+</script>
+
+</html>
