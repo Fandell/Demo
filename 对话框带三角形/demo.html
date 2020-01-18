@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>demo</title>
+    <style type="text/css">
+        .san-p {
+            position: relative;
+            height: 80px;
+            width: 100px;
+            text-align: center;
+            line-height: 80px;
+            border: 1px solid #000;
+            border-radius: 8px;
+            background: pink;
+        }
+
+        .san-p::before {
+            content: '';
+            position: absolute;
+            left: 73px;
+            top: -16px;
+            width: 0px;
+            height: 0px;
+            border-width: 8px;
+            border-style: solid;
+            border-color: transparent transparent #000 transparent;
+        }
+
+        .san-p::after {
+            content: '';
+            position: absolute;
+            left: 73px;
+            top: -15px;
+            border-width: 8px;
+            border-style: solid;
+            border-color: transparent transparent pink transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="san-p"></div>
+</body>
+
+</html>

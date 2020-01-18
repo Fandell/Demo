@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="show">
+        <input name="check" type="checkbox" checked />1我已认真阅读并同意遵守<a href="#" class="color-green">用户服务协议</a><br>
+        <input name="check" type="checkbox" checked />2我已认真阅读并同意遵守<a href="#" class="color-green">用户服务协议</a><br>
+        <input name="check" type="checkbox" checked />3我已认真阅读并同意遵守<a href="#" class="color-green">用户服务协议</a><br>
+        <input name="check" type="checkbox" checked />4我已认真阅读并同意遵守<a href="#" class="color-green">用户服务协议</a><br>
+        <input name="check" type="checkbox" checked />5我已认真阅读并同意遵守<a href="#" class="color-green">用户服务协议</a><br>
+        <input name="check" type="checkbox" checked />6我已认真阅读并同意遵守<a href="#" class="color-green">用户服务协议</a><br>
+    </div>
+</body>
+<script src="/jQuery-v1.12.0.js"></script>
+<script>
+    function isChecked() {
+        var count = 0;
+        var checkArry = document.getElementsByName("check");
+        for (var i = 0; i < checkArry.length; i++) {
+            if (checkArry[i].checked == true) {
+                // 进行选中后的操作
+                count++;
+            }
+        }
+        if (count == 0) {
+            $('.show').hide();
+        }
+    }
+    $("input[type='checkbox']").on('click', function () {
+        isChecked()
+    });
+
+
+
+</script>
+
+
+</html>

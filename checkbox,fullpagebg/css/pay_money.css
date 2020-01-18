@@ -1,0 +1,122 @@
+.payfor_photo {
+    height: 656px;
+    background: #fff;
+    text-align: center;
+    overflow: hidden;
+    margin-top: 14px
+}
+
+.payfor_photo p:nth-child(1) {
+    margin-top: 72px;
+    color: #959595
+}
+
+.payfor_photo p:nth-child(2) {
+    color: #ff5c00;
+    font-weight: 700;
+    font-size: 24px;
+    margin-top: 10px
+}
+
+.payfor_photo p:nth-child(3) {
+    margin-top: 13px
+}
+
+.payfor_photo p:nth-child(4) {
+    height: 167px;
+    width: 167px;
+    margin: 0 auto;
+    border: 2px solid #86a6c2;
+    margin-top: 10px
+}
+
+.pay_fail {
+    text-align: center;
+    height: 659px;
+    background: #fff;
+    overflow: hidden
+}
+
+.pay_fail p:nth-child(1) {
+    margin-top: 120px
+}
+
+.pay_fail p:nth-child(2) {
+    font-size: 20px;
+    color: #666;
+    margin-top: 50px;
+    position: relative
+}
+
+.pay_fail p:nth-child(2) span {
+    color: #f55949
+}
+
+#pay_line1 {
+    position: absolute;
+    height: 2px;
+    width: 23px;
+    background: #f55949;
+    bottom: 0;
+    left: 49.9%
+}
+
+.pay_fail p:nth-child(3) {
+    display: block;
+    width: 134px;
+    height: 57px;
+    background: #89c200;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 57px;
+    font-size: 22px;
+    color: #fff;
+    margin: 0 auto;
+    margin-top: 42px
+}
+
+.pay_success {
+    text-align: center;
+    height: 659px;
+    background: #fff;
+    overflow: hidden
+}
+
+.pay_success p:nth-child(1) {
+    margin-top: 120px
+}
+
+.pay_success p:nth-child(2),
+.pay_success p:nth-child(3) {
+    font-size: 18px;
+    color: #666;
+    line-height: 35px
+}
+
+#pay_line {
+    position: absolute;
+    height: 2px;
+    width: 20px;
+    background: #f55949;
+    bottom: 0;
+    left: 0
+}
+
+.pay_success p:nth-child(4) {
+    position: relative;
+    margin-top: 30px;
+    font-size: 16px;
+    color: #666;
+    width: 150px;
+    margin: 0 auto;
+    margin-top: 70px
+}
+
+.line_two {
+    position: absolute;
+    height: 2px;
+    width: 129px;
+    background: #666;
+    bottom: 0;
+    left: 20px
+}

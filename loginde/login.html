@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>MO信通后台登录</title>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <link href="back-login.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="lib/layui/css/layui.css">
+</head>
+
+<body>
+    <div class="login_box">
+        <div class="login_l_img"><img src="login-img.png" /></div>
+        <div class="login">
+            <div class="login_logo"><a href="#"><img src="login_logo.png" /></a></div>
+            <div class="login_name">
+                <p>MO信通后台登录</p>
+            </div>
+            <form class="layui-form" action="">
+                <input name="username" type="text" id="username" autocomplete="off" placeholder="请输入账号">
+                <input name="password" type="password" id="password" placeholder="请输入密码" />
+                <input name="vcode" type="text" value="" placeholder="请输入短信验证码" style="width: 58%;"><span
+                    class="layui-btn" style="
+                    margin-bottom: 15px;
+                    height: 50px;
+                    line-height: 50px;
+                    margin-left: 18px;
+                    background: #83c209;" id="getcode">获取验证码</span>
+                <input value="登录" style="width:100%;" type="submit" id="submit" lay-submit="" lay-filter="login">
+             
+            </form>
+        </div>
+        <div class="copyright" style="position: absolute;bottom:10%;left: 0;">备案号：沪ICP备11008372号<br>
+            © Copyright 2020 Molink. All Rights Reserved.</div>
+    </div>
+    <script src="lib/layui/layui.js"></script>
+    <script src="js/jQuery-v1.12.0.js"></script>
+    <script>
+        $(function () {
+            $("#getcode").click(function () {
+                if ($(this).attr("dis") == '1') { // 防止异步重复提交
+                    layer.tips('请勿重复提交测试', '#getcode', {
+                        tips: 1,
+                        time: 4000,
+                    });
+                    return false;
+                }
+                var username, password;
+                username = $("#username").val();
+                password = $("#password").val();
+                if (username == null || username == '') {
+                    layer.tips('请输入账号', '#username', {
+                        tips: 1
+                    });
+                    return false;
+                }
+                if (password == null || password == '') {
+                    layer.tips('请输入密码', '#password', {
+                        tips: 1
+                    });
+                    return false;
+                } else {
+                    var verifyCode = 'null';
+                    $(this).attr("dis", "1");
+                    $.post("/loginVcode", {
+                        "username": username,
+                        "password": password,
+                    }, function (data) {
+                        if (data.code == '200') {
+                            layer.tips('请注意查收手机验证码', '#vcode', {
+                                tips: 1
+                            });
+                            $("#getcode").html("60s后验证");
+                            $('#getcode').css({
+                                "background": "#999",
+                                "pointer-events": "none"
+                            });
+                            var timeSec = 59;
+                            var timeStr = '';
+                            $("#getcode").attr("dis", "1");
+                            var codeTime = setInterval(function Internal() {
+                                if (timeSec == 0) {
+                                    $("#getcode").text("获取验证码");
+                                    $('#getcode').css({
+                                        "background": "rgba(20, 68, 188, .5)",
+                                        "pointer-events": "auto"
+                                    });
+                                    clearInterval(codeTime);
+                                    $("#getcode").attr("dis", "0");
+                                    return;
+                                }
+                                timeStr = "(" + timeSec + ")后验证";
+                                $("#getcode").html(timeStr);
+                                timeSec--;
+                            }, 500);
+                        } else {
+                            layer.tips(data.msg, '#vcode', {
+                                tips: 1
+                            });
+                            $("#getcode").attr("dis", "0");
+                        }
+                    }, "json");
+                    return false;
+                }
+            });
+        });
+        layui.use(['carousel', 'form'], function () {
+            var carousel = layui.carousel,
+                form = layui.form;
+            //监听提交
+            form.on('submit(login)', function (data) {
+                var msg = data.field;
+                console.log(msg)
+                if (msg.username == null || msg.username == '') {
+                    layer.tips('请输入账号', '#username', {
+                        tips: 1
+                    });
+                    return false;
+                }
+                if (msg.password == null || msg.password == '') {
+                    layer.tips('请输入密码', '#password', {
+                        tips: 1
+                    });
+                    return false;
+                }
+                if (msg.vcode == null || msg.vcode == '') {
+                    layer.tips('请输入手机验证码', '#vcode', {
+                        tips: 1
+                    });
+                    return false;
+                }
+                $("#submit").text("正在登录......");
+                $.post("sysLogin", {
+                    "username": msg.username,
+                    "password": msg.password,
+                    "vcode": msg.vcode
+                }, function (res) {
+                    if (res.code == 200) {
+                        location.href = "sms/index";
+                    } else {
+                        $("#submit").text("立即登录");
+                        layer.tips(res.msg, '#vcode', {
+                            tips: 1
+                        });
+                        $("#getcode").attr("dis", "0");
+                    }
+                }, 'json')
+                return false;
+            });
+        });
+    </script>
+</body>
+
+</html>

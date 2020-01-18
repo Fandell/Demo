@@ -1,0 +1,101 @@
+.bank{
+    /* height: 834px; */
+    background: #f1f0f0;
+    width:100%;
+    
+
+}
+.bank_content{
+    width: 100%;
+/*     max-width:1204px; */
+    margin:0 auto;
+    overflow: hidden;
+}
+.return div:nth-child(1){
+    font-size: 30px;
+    color: #000000;
+    height: 73px;
+    width: 150px;
+    line-height: 73px;
+    float: left;
+}
+.return{
+    height: 73px;
+    font-size:16px;
+}
+.return div:nth-child(2){
+    float:right;
+    line-height: 73px;
+    font-size: 16px;
+}
+.return>div>a{
+    color: #89c200;
+}
+.information{
+    height: 91px;
+    background: #f0fcd4;
+    border-bottom: 2px solid #89c200;
+    overflow: hidden;
+   padding: 15px 0;
+ 
+}
+.information span{
+    color: #ff5c00;
+    font-weight: bold;
+    font-size: 24px;
+    width: 150px;
+    float: right;
+    display: block;
+    margin-top: -40px;
+}
+.information p{
+    color: #666666;
+    font-size: 15px;
+    padding: 0;
+    margin: 0;
+    text-indent: 2em;
+    height: 28px;
+    line-height: 28px;
+}
+.pay_fail{
+    text-align: center;
+   /*  height: 659px; */
+    background: #ffffff;
+   /*  margin-top: 13px; */
+    overflow: hidden;
+}
+.pay_fail p:nth-child(1){
+    margin-top: 120px;
+}
+.pay_fail p:nth-child(2){
+    font-size: 20px;
+    color: #666666;
+    margin-top: 50px;
+    position: relative;
+}
+.pay_fail p:nth-child(2) span{
+    color: #f55949;
+}
+
+#pay_line{
+    position: absolute;
+    height: 2px;
+    width: 23px;
+    background: #f55949;
+    bottom: 0;
+    left: 50%;
+}
+ .pay_fail p:nth-child(3){
+    display: block;
+    width: 134px;
+    height: 57px;
+    background: #89c200;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 57px;
+    font-size: 22px;
+    color: #ffffff;
+    margin: 0 auto;
+    margin-top: 42px;
+
+} 
