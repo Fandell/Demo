@@ -7,12 +7,18 @@
     <script src="./layui/layui.js"></script>
     <script src="./zzz.js"></script>
     <link rel="stylesheet" href="./layui/css/layui.css" media="all">
-
+<style>
+    .layui-form-selectup dl {
+    top: 42px;
+    bottom: unset;
+}
+</style>
     <script>
         (function () {
-            layui.use(['table', 'layer'], function () {
+            layui.use(['table', 'layer', 'form'], function () {
                 var table = layui.table;
                 var layer = layui.layer;
+                var form = layui.form;
                 var $ = layui.jquery;
                 table.render({
                     id: "tableID"// 设定表格的唯一ID进行标识
@@ -93,6 +99,24 @@
 </head>
 <body>
 <table id="tableDataLoad" lay-filter="demo"></table>
-
+<form class="layui-form" action="">
+<div class="layui-form-item">
+    <label class="layui-form-label">单行选择框</label>
+    <div class="layui-input-block">
+      <select name="interest" lay-filter="aihao">
+        <option value=""></option>
+        <option value="0">写作</option>
+        <option value="1" selected="">阅读</option>
+        <option value="2">游戏</option>
+        <option value="3">音乐</option>
+        <option value="4">旅行</option>
+        <option value="4">旅行</option>
+        <option value="4">旅行</option>
+        <option value="4">旅行</option>
+        <option value="4">旅行</option>
+      </select>
+    </div>
+  </div>
+</form>
 </body>
 </html>
